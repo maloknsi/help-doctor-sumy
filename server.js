@@ -114,7 +114,7 @@ botTelegram.onText(/(.*)#(водитель|водій)(.+)/i, function (msg, mat
 				'date' : new Date().toLocaleString(),
 				'text' : match[1] + '\n' + match[3],
 			});
-		//botTelegram.sendMessage(msg.from.id, 'Вас додано до бази даних водіїв: \n' + match[3]).then().catch();
+		botTelegram.sendMessage(msg.from.id, 'Вас додано до бази даних водіїв: \n' + match[3]).then().catch();
 		fs.writeFile('drivers.json', JSON.stringify(arrayDrivers), 'utf8', function(err) {if (err) throw err;console.log(err);});
 	}
 });
@@ -132,7 +132,7 @@ botTelegram.onText(/(.*)#(медработник|врач|лікар|медсе�
 				'date' : new Date().toLocaleString(),
 				'text' : match[1] + '\n' + match[3],
 			});
-		//botTelegram.sendMessage(msg.from.id, 'Вас додано до бази даних медперсоналу: \n' + match[3]).then().catch();
+		botTelegram.sendMessage(msg.from.id, 'Вас додано до бази даних медперсоналу: \n' + match[3]).then().catch();
 		fs.writeFile('doctors.json', JSON.stringify(arrayDoctors), 'utf8', function(err) {if (err) throw err;console.log(err);});
 	}
 });
@@ -140,14 +140,14 @@ botTelegram.onText(/(.*)#(медработник|врач|лікар|медсе�
 // Простая команда без параметров
 botTelegram.on('message', function (msg) {
 	if (msg.text.match(/^#(водитель|водій)(.+)$/)) {
-		// console.log(msg.text);
-		// console.log(msg.from);
-		// console.log(msg.chat);
+		 console.log(msg.text);
+		 console.log(msg.from);
+		 console.log(msg.chat);
 	}
-	// console.log(msg);
-	// console.log(msg.text);
-	// console.log(msg.from);
-	// console.log(msg.chat);
+	 console.log(msg);
+	 console.log(msg.text);
+	 console.log(msg.from);
+	 console.log(msg.chat);
 });
 //----------------------------------------------------------------------------------------------------------------------
 //------------ VIBER EVENTS --------------------------------------------------------------------------------------------
