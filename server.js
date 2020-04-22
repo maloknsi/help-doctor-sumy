@@ -7,7 +7,7 @@ const fs = require('fs');
 
 let botTelegramToken = '1141326307:AAEEoVSVl30uEa2vv44YNGMuzbC8YeK9PtQ';
 let botViberToken = '4b444edb31a7d093-47870dc6a6c6337a-e6d832d092e7f86c';
-let botViberServerUrl = 'https://6ff9fc1e.ngrok.io';
+let botViberServerUrl = 'https://help-doctor-sumy.herokuapp.com/';
 let botViberServerPort = 80;
 let botViberHttpsOptions;
 
@@ -58,7 +58,7 @@ try {
 		}
 	}
 } catch (e) {
-	menu.log(e);
+	//menu.log(e);
 	menu.log('no local config');
 }
 
