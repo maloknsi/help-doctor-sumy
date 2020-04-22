@@ -5,7 +5,7 @@ const ViberBotEvents = require('viber-bot').Events;
 const menu = require('./menu');
 const fs = require('fs');
 
-let botTelegramToken = '1141326307:AAEEoVSVl30uEa2vv44YNGMuzbC8YeK9PtQ';
+let botTelegramToken = '1196983988:AAE2I39bjrE-xduz8VC-s0-Up122hdiAU0E';
 let botViberToken = '4b444edb31a7d093-47870dc6a6c6337a-e6d832d092e7f86c';
 let botViberServerUrl = 'https://help-doctor-sumy.herokuapp.com/';
 let botViberServerPort = 80;
@@ -114,7 +114,7 @@ botTelegram.onText(/(.*)#(водитель|водій)(.+)/i, function (msg, mat
 				'date' : new Date().toLocaleString(),
 				'text' : match[1] + '\n' + match[3],
 			});
-		botTelegram.sendMessage(msg.from.id, 'Вас додано до бази даних водіїв: \n' + match[3]).then().catch();
+		//botTelegram.sendMessage(msg.from.id, 'Вас додано до бази даних водіїв: \n' + match[3]).then().catch();
 		fs.writeFile('drivers.json', JSON.stringify(arrayDrivers), 'utf8', function(err) {if (err) throw err;console.log(err);});
 	}
 });
@@ -132,7 +132,7 @@ botTelegram.onText(/(.*)#(медработник|врач|лікар|медсе�
 				'date' : new Date().toLocaleString(),
 				'text' : match[1] + '\n' + match[3],
 			});
-		botTelegram.sendMessage(msg.from.id, 'Вас додано до бази даних медперсоналу: \n' + match[3]).then().catch();
+		//botTelegram.sendMessage(msg.from.id, 'Вас додано до бази даних медперсоналу: \n' + match[3]).then().catch();
 		fs.writeFile('doctors.json', JSON.stringify(arrayDoctors), 'utf8', function(err) {if (err) throw err;console.log(err);});
 	}
 });
