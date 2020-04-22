@@ -458,8 +458,8 @@ botViber.on(ViberBotEvents.MESSAGE_RECEIVED, (botMessage, botResponse) => {
 
 if (botViberHttpsOptions !== undefined){
 	const http = require('https');
-	//http.createServer(botViberHttpsOptions, botViber.middleware()).listen(botViberServerPort, () => botViber.setWebhook(botViberServerUrl));
+	http.createServer(botViberHttpsOptions, botViber.middleware()).listen(botViberServerPort, () => botViber.setWebhook(botViberServerUrl));
 } else {
 	const http = require('http');
-	//http.createServer(botViber.middleware()).listen(botViberServerPort, () => botViber.setWebhook(botViberServerUrl));
+	http.createServer(botViber.middleware()).listen(botViberServerPort, () => botViber.setWebhook(botViberServerUrl));
 }
