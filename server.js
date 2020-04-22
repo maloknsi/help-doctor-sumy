@@ -83,7 +83,7 @@ botTelegram.onText(/\/drivers(.*)/, function (msg, match) {
 			}
 			messageSend += '*' + driverMsg.date + ' : ' + driverMsg.text + '\n\n';
 		});
-		//botTelegram.sendMessage(msg.from.id, messageSend).then().catch();
+		botTelegram.sendMessage(msg.from.id, messageSend).then().catch();
 	}
 });
 
@@ -97,7 +97,7 @@ botTelegram.onText(/\/doctors(.*)/, function (msg, match) {
 			}
 			messageSend += '*' + doctorMsg.date + ' : ' + doctorMsg.text + '\n\n';
 		});
-		//botTelegram.sendMessage(msg.from.id, messageSend).then().catch();
+		botTelegram.sendMessage(msg.from.id, messageSend).then().catch();
 	}
 });
 
@@ -114,7 +114,7 @@ botTelegram.onText(/(.*)#(водитель|водій)(.+)/i, function (msg, mat
 				'date' : new Date().toLocaleString(),
 				'text' : match[1] + '\n' + match[3],
 			});
-		//botTelegram.sendMessage(msg.from.id, 'Вас додано до бази даних водіїв: \n' + match[3]).then().catch();
+		botTelegram.sendMessage(msg.from.id, 'Вас додано до бази даних водіїв: \n' + match[3]).then().catch();
 		fs.writeFile('drivers.json', JSON.stringify(arrayDrivers), 'utf8', function(err) {if (err) throw err;console.log(err);});
 	}
 });
@@ -132,7 +132,7 @@ botTelegram.onText(/(.*)#(медработник|врач|лікар|медсе�
 				'date' : new Date().toLocaleString(),
 				'text' : match[1] + '\n' + match[3],
 			});
-		//botTelegram.sendMessage(msg.from.id, 'Вас додано до бази даних медперсоналу: \n' + match[3]).then().catch();
+		botTelegram.sendMessage(msg.from.id, 'Вас додано до бази даних медперсоналу: \n' + match[3]).then().catch();
 		fs.writeFile('doctors.json', JSON.stringify(arrayDoctors), 'utf8', function(err) {if (err) throw err;console.log(err);});
 	}
 });
